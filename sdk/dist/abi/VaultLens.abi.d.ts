@@ -1,0 +1,3463 @@
+export declare const VaultLensAbi: readonly [{
+    readonly inputs: readonly [{
+        readonly internalType: "int256";
+        readonly name: "value";
+        readonly type: "int256";
+    }];
+    readonly name: "UFixed6UnderflowError";
+    readonly type: "error";
+}, {
+    readonly inputs: readonly [{
+        readonly components: readonly [{
+            readonly internalType: "contract IKeeperFactory";
+            readonly name: "keeperFactory";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "value";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "bytes32[]";
+            readonly name: "ids";
+            readonly type: "bytes32[]";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "version";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "bytes";
+            readonly name: "updateData";
+            readonly type: "bytes";
+        }];
+        readonly internalType: "struct PriceCommitData[]";
+        readonly name: "commits";
+        readonly type: "tuple[]";
+    }, {
+        readonly internalType: "contract Lens";
+        readonly name: "marketLens";
+        readonly type: "address";
+    }, {
+        readonly internalType: "contract IVault[]";
+        readonly name: "vaults";
+        readonly type: "address[]";
+    }, {
+        readonly internalType: "address";
+        readonly name: "account";
+        readonly type: "address";
+    }, {
+        readonly internalType: "address";
+        readonly name: "multiInvoker";
+        readonly type: "address";
+    }];
+    readonly name: "snapshot";
+    readonly outputs: readonly [{
+        readonly components: readonly [{
+            readonly internalType: "bytes[]";
+            readonly name: "commitmentStatus";
+            readonly type: "bytes[]";
+        }, {
+            readonly internalType: "bytes[]";
+            readonly name: "updateStatus";
+            readonly type: "bytes[]";
+        }, {
+            readonly internalType: "bytes[]";
+            readonly name: "settleStatus";
+            readonly type: "bytes[]";
+        }, {
+            readonly components: readonly [{
+                readonly components: readonly [{
+                    readonly internalType: "contract IVault";
+                    readonly name: "vault";
+                    readonly type: "address";
+                }, {
+                    readonly internalType: "string";
+                    readonly name: "name";
+                    readonly type: "string";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "maxDeposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "minDeposit";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct VaultParameter";
+                    readonly name: "parameter";
+                    readonly type: "tuple";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "totalAssets";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "totalShares";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "totalMarkets";
+                    readonly type: "uint256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "contract IMarket";
+                        readonly name: "market";
+                        readonly type: "address";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "weight";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "leverage";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Registration[]";
+                    readonly name: "registrations";
+                    readonly type: "tuple[]";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "uint256";
+                        readonly name: "current";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "latest";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "shares";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "assets";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "deposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "redemption";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Account";
+                    readonly name: "vaultAccount";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "deposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "redemption";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "shares";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "assets";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "tradeFee";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "settlementFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "deposits";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "redemptions";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "timestamp";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Checkpoint";
+                    readonly name: "latestCheckpoint";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "deposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "redemption";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "shares";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "assets";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "tradeFee";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "settlementFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "deposits";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "redemptions";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "timestamp";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Checkpoint";
+                    readonly name: "currentCheckpoint";
+                    readonly type: "tuple";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "vaultMinimum";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "totalMarketCollateral";
+                    readonly type: "int256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "contract IMarket";
+                        readonly name: "marketAddress";
+                        readonly type: "address";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "UFixed6";
+                            readonly name: "fundingFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "interestFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "riskFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "maxPendingGlobal";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "maxPendingLocal";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maxPriceDeviation";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "closed";
+                            readonly type: "bool";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "settle";
+                            readonly type: "bool";
+                        }];
+                        readonly internalType: "struct MarketParameter";
+                        readonly name: "parameter";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "UFixed6";
+                            readonly name: "margin";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maintenance";
+                            readonly type: "uint256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "UFixed6";
+                                readonly name: "linearFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "proportionalFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "adiabaticFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "scale";
+                                readonly type: "uint256";
+                            }];
+                            readonly internalType: "struct LinearAdiabatic6";
+                            readonly name: "takerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "UFixed6";
+                                readonly name: "linearFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "proportionalFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "scale";
+                                readonly type: "uint256";
+                            }];
+                            readonly internalType: "struct NoopAdiabatic6";
+                            readonly name: "makerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerLimit";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "efficiencyLimit";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "liquidationFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "UFixed6";
+                                readonly name: "minRate";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "maxRate";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "targetRate";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "targetUtilization";
+                                readonly type: "uint256";
+                            }];
+                            readonly internalType: "struct UJumpRateUtilizationCurve6";
+                            readonly name: "utilizationCurve";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "UFixed6";
+                                readonly name: "k";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "Fixed6";
+                                readonly name: "min";
+                                readonly type: "int256";
+                            }, {
+                                readonly internalType: "Fixed6";
+                                readonly name: "max";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct PController6";
+                            readonly name: "pController";
+                            readonly type: "tuple";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "minMargin";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "minMaintenance";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "staleAfter";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "makerReceiveOnly";
+                            readonly type: "bool";
+                        }];
+                        readonly internalType: "struct RiskParameter";
+                        readonly name: "riskParameter";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "currentId";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "latestId";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "protocolFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "oracleFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "riskFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "latestPrice";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "exposure";
+                            readonly type: "int256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }, {
+                                readonly internalType: "Fixed6";
+                                readonly name: "_skew";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct PAccumulator6";
+                            readonly name: "pAccumulator";
+                            readonly type: "tuple";
+                        }];
+                        readonly internalType: "struct Global";
+                        readonly name: "global";
+                        readonly type: "tuple";
+                    }, {
+                        readonly internalType: "contract IOracle";
+                        readonly name: "oracle";
+                        readonly type: "address";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "protection";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerReferral";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerReferral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Order";
+                        readonly name: "pendingOrder";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position";
+                        readonly name: "position";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position";
+                        readonly name: "nextPosition";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position[]";
+                        readonly name: "pendingPositions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "bool";
+                            readonly name: "valid";
+                            readonly type: "bool";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "price";
+                            readonly type: "int256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "longValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "shortValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerPosOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerNegOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "settlementFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "liquidationFee";
+                            readonly type: "tuple";
+                        }];
+                        readonly internalType: "struct Version[]";
+                        readonly name: "versions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "price";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "valid";
+                            readonly type: "bool";
+                        }];
+                        readonly internalType: "struct OracleVersion";
+                        readonly name: "latestOracleVersion";
+                        readonly type: "tuple";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "currentOracleVersion";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Lens.MarketSnapshot[]";
+                    readonly name: "marketSnapshots";
+                    readonly type: "tuple[]";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "contract IMarket";
+                        readonly name: "marketAddress";
+                        readonly type: "address";
+                    }, {
+                        readonly internalType: "address";
+                        readonly name: "account";
+                        readonly type: "address";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "currentId";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "latestId";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "claimable";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Local";
+                        readonly name: "local";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "protection";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerReferral";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerReferral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Order";
+                        readonly name: "latestOrder";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "protection";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerReferral";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerReferral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Order";
+                        readonly name: "pendingOrder";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "notional";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "referral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Guarantee";
+                        readonly name: "latestGuarantee";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "notional";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "referral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Guarantee";
+                        readonly name: "pendingGuarantee";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position";
+                        readonly name: "position";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position";
+                        readonly name: "nextPosition";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "Fixed6";
+                            readonly name: "tradeFee";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "settlementFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "transfer";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }];
+                        readonly internalType: "struct Checkpoint";
+                        readonly name: "checkpoint";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position[]";
+                        readonly name: "pendingPositions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "bool";
+                            readonly name: "valid";
+                            readonly type: "bool";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "price";
+                            readonly type: "int256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "longValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "shortValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerPosOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerNegOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "settlementFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "liquidationFee";
+                            readonly type: "tuple";
+                        }];
+                        readonly internalType: "struct Version[]";
+                        readonly name: "versions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "price";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "valid";
+                            readonly type: "bool";
+                        }];
+                        readonly internalType: "struct OracleVersion[]";
+                        readonly name: "oracleVersions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "UFixed6";
+                            readonly name: "settlementFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "oracleFee";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct OracleReceipt[]";
+                        readonly name: "oracleReceipts";
+                        readonly type: "tuple[]";
+                    }];
+                    readonly internalType: "struct Lens.MarketAccountSnapshot[]";
+                    readonly name: "marketVaultSnapshots";
+                    readonly type: "tuple[]";
+                }];
+                readonly internalType: "struct VaultLens.VaultSnapshot[]";
+                readonly name: "vaultSnapshots";
+                readonly type: "tuple[]";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "contract IVault";
+                    readonly name: "vault";
+                    readonly type: "address";
+                }, {
+                    readonly internalType: "address";
+                    readonly name: "account";
+                    readonly type: "address";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "uint256";
+                        readonly name: "current";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "latest";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "shares";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "assets";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "deposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "redemption";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Account";
+                    readonly name: "accountData";
+                    readonly type: "tuple";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "assets";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "redemptionAssets";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "bool";
+                    readonly name: "multiInvokerApproved";
+                    readonly type: "bool";
+                }];
+                readonly internalType: "struct VaultLens.VaultAccountSnapshot[]";
+                readonly name: "vaultAccountSnapshots";
+                readonly type: "tuple[]";
+            }];
+            readonly internalType: "struct VaultLens.SnapshotResult";
+            readonly name: "preUpdate";
+            readonly type: "tuple";
+        }, {
+            readonly components: readonly [{
+                readonly components: readonly [{
+                    readonly internalType: "contract IVault";
+                    readonly name: "vault";
+                    readonly type: "address";
+                }, {
+                    readonly internalType: "string";
+                    readonly name: "name";
+                    readonly type: "string";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "maxDeposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "minDeposit";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct VaultParameter";
+                    readonly name: "parameter";
+                    readonly type: "tuple";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "totalAssets";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "totalShares";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "totalMarkets";
+                    readonly type: "uint256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "contract IMarket";
+                        readonly name: "market";
+                        readonly type: "address";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "weight";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "leverage";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Registration[]";
+                    readonly name: "registrations";
+                    readonly type: "tuple[]";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "uint256";
+                        readonly name: "current";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "latest";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "shares";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "assets";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "deposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "redemption";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Account";
+                    readonly name: "vaultAccount";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "deposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "redemption";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "shares";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "assets";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "tradeFee";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "settlementFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "deposits";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "redemptions";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "timestamp";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Checkpoint";
+                    readonly name: "latestCheckpoint";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "deposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "redemption";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "shares";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "assets";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "tradeFee";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "settlementFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "deposits";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "redemptions";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "timestamp";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Checkpoint";
+                    readonly name: "currentCheckpoint";
+                    readonly type: "tuple";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "vaultMinimum";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "totalMarketCollateral";
+                    readonly type: "int256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "contract IMarket";
+                        readonly name: "marketAddress";
+                        readonly type: "address";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "UFixed6";
+                            readonly name: "fundingFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "interestFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "riskFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "maxPendingGlobal";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "maxPendingLocal";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maxPriceDeviation";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "closed";
+                            readonly type: "bool";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "settle";
+                            readonly type: "bool";
+                        }];
+                        readonly internalType: "struct MarketParameter";
+                        readonly name: "parameter";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "UFixed6";
+                            readonly name: "margin";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maintenance";
+                            readonly type: "uint256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "UFixed6";
+                                readonly name: "linearFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "proportionalFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "adiabaticFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "scale";
+                                readonly type: "uint256";
+                            }];
+                            readonly internalType: "struct LinearAdiabatic6";
+                            readonly name: "takerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "UFixed6";
+                                readonly name: "linearFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "proportionalFee";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "scale";
+                                readonly type: "uint256";
+                            }];
+                            readonly internalType: "struct NoopAdiabatic6";
+                            readonly name: "makerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerLimit";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "efficiencyLimit";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "liquidationFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "UFixed6";
+                                readonly name: "minRate";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "maxRate";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "targetRate";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "UFixed6";
+                                readonly name: "targetUtilization";
+                                readonly type: "uint256";
+                            }];
+                            readonly internalType: "struct UJumpRateUtilizationCurve6";
+                            readonly name: "utilizationCurve";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "UFixed6";
+                                readonly name: "k";
+                                readonly type: "uint256";
+                            }, {
+                                readonly internalType: "Fixed6";
+                                readonly name: "min";
+                                readonly type: "int256";
+                            }, {
+                                readonly internalType: "Fixed6";
+                                readonly name: "max";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct PController6";
+                            readonly name: "pController";
+                            readonly type: "tuple";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "minMargin";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "minMaintenance";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "staleAfter";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "makerReceiveOnly";
+                            readonly type: "bool";
+                        }];
+                        readonly internalType: "struct RiskParameter";
+                        readonly name: "riskParameter";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "currentId";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "latestId";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "protocolFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "oracleFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "riskFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "latestPrice";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "exposure";
+                            readonly type: "int256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }, {
+                                readonly internalType: "Fixed6";
+                                readonly name: "_skew";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct PAccumulator6";
+                            readonly name: "pAccumulator";
+                            readonly type: "tuple";
+                        }];
+                        readonly internalType: "struct Global";
+                        readonly name: "global";
+                        readonly type: "tuple";
+                    }, {
+                        readonly internalType: "contract IOracle";
+                        readonly name: "oracle";
+                        readonly type: "address";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "protection";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerReferral";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerReferral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Order";
+                        readonly name: "pendingOrder";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position";
+                        readonly name: "position";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position";
+                        readonly name: "nextPosition";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position[]";
+                        readonly name: "pendingPositions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "bool";
+                            readonly name: "valid";
+                            readonly type: "bool";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "price";
+                            readonly type: "int256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "longValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "shortValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerPosOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerNegOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "settlementFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "liquidationFee";
+                            readonly type: "tuple";
+                        }];
+                        readonly internalType: "struct Version[]";
+                        readonly name: "versions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "price";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "valid";
+                            readonly type: "bool";
+                        }];
+                        readonly internalType: "struct OracleVersion";
+                        readonly name: "latestOracleVersion";
+                        readonly type: "tuple";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "currentOracleVersion";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Lens.MarketSnapshot[]";
+                    readonly name: "marketSnapshots";
+                    readonly type: "tuple[]";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "contract IMarket";
+                        readonly name: "marketAddress";
+                        readonly type: "address";
+                    }, {
+                        readonly internalType: "address";
+                        readonly name: "account";
+                        readonly type: "address";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "currentId";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "latestId";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "claimable";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Local";
+                        readonly name: "local";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "protection";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerReferral";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerReferral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Order";
+                        readonly name: "latestOrder";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "longNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "shortNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "uint256";
+                            readonly name: "protection";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "makerReferral";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerReferral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Order";
+                        readonly name: "pendingOrder";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "notional";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "referral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Guarantee";
+                        readonly name: "latestGuarantee";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "orders";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "notional";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerPos";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerNeg";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "takerFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "referral";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Guarantee";
+                        readonly name: "pendingGuarantee";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position";
+                        readonly name: "position";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position";
+                        readonly name: "nextPosition";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "Fixed6";
+                            readonly name: "tradeFee";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "settlementFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "transfer";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "collateral";
+                            readonly type: "int256";
+                        }];
+                        readonly internalType: "struct Checkpoint";
+                        readonly name: "checkpoint";
+                        readonly type: "tuple";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "maker";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "long";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "short";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct Position[]";
+                        readonly name: "pendingPositions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "bool";
+                            readonly name: "valid";
+                            readonly type: "bool";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "price";
+                            readonly type: "int256";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "longValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "shortValue";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "makerOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerPosOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "takerNegOffset";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "settlementFee";
+                            readonly type: "tuple";
+                        }, {
+                            readonly components: readonly [{
+                                readonly internalType: "Fixed6";
+                                readonly name: "_value";
+                                readonly type: "int256";
+                            }];
+                            readonly internalType: "struct Accumulator6";
+                            readonly name: "liquidationFee";
+                            readonly type: "tuple";
+                        }];
+                        readonly internalType: "struct Version[]";
+                        readonly name: "versions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "uint256";
+                            readonly name: "timestamp";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "Fixed6";
+                            readonly name: "price";
+                            readonly type: "int256";
+                        }, {
+                            readonly internalType: "bool";
+                            readonly name: "valid";
+                            readonly type: "bool";
+                        }];
+                        readonly internalType: "struct OracleVersion[]";
+                        readonly name: "oracleVersions";
+                        readonly type: "tuple[]";
+                    }, {
+                        readonly components: readonly [{
+                            readonly internalType: "UFixed6";
+                            readonly name: "settlementFee";
+                            readonly type: "uint256";
+                        }, {
+                            readonly internalType: "UFixed6";
+                            readonly name: "oracleFee";
+                            readonly type: "uint256";
+                        }];
+                        readonly internalType: "struct OracleReceipt[]";
+                        readonly name: "oracleReceipts";
+                        readonly type: "tuple[]";
+                    }];
+                    readonly internalType: "struct Lens.MarketAccountSnapshot[]";
+                    readonly name: "marketVaultSnapshots";
+                    readonly type: "tuple[]";
+                }];
+                readonly internalType: "struct VaultLens.VaultSnapshot[]";
+                readonly name: "vaultSnapshots";
+                readonly type: "tuple[]";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "contract IVault";
+                    readonly name: "vault";
+                    readonly type: "address";
+                }, {
+                    readonly internalType: "address";
+                    readonly name: "account";
+                    readonly type: "address";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "uint256";
+                        readonly name: "current";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "uint256";
+                        readonly name: "latest";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "shares";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "assets";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "deposit";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "redemption";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct Account";
+                    readonly name: "accountData";
+                    readonly type: "tuple";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "assets";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "redemptionAssets";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "bool";
+                    readonly name: "multiInvokerApproved";
+                    readonly type: "bool";
+                }];
+                readonly internalType: "struct VaultLens.VaultAccountSnapshot[]";
+                readonly name: "vaultAccountSnapshots";
+                readonly type: "tuple[]";
+            }];
+            readonly internalType: "struct VaultLens.SnapshotResult";
+            readonly name: "postUpdate";
+            readonly type: "tuple";
+        }];
+        readonly internalType: "struct VaultLens.SnapshotReturnValue";
+        readonly name: "result";
+        readonly type: "tuple";
+    }];
+    readonly stateMutability: "nonpayable";
+    readonly type: "function";
+}, {
+    readonly inputs: readonly [{
+        readonly internalType: "contract IVault";
+        readonly name: "vault";
+        readonly type: "address";
+    }, {
+        readonly internalType: "contract Lens";
+        readonly name: "marketLens";
+        readonly type: "address";
+    }, {
+        readonly internalType: "bool";
+        readonly name: "postSettle";
+        readonly type: "bool";
+    }];
+    readonly name: "snapshotVault";
+    readonly outputs: readonly [{
+        readonly components: readonly [{
+            readonly internalType: "contract IVault";
+            readonly name: "vault";
+            readonly type: "address";
+        }, {
+            readonly internalType: "string";
+            readonly name: "name";
+            readonly type: "string";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "UFixed6";
+                readonly name: "maxDeposit";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "minDeposit";
+                readonly type: "uint256";
+            }];
+            readonly internalType: "struct VaultParameter";
+            readonly name: "parameter";
+            readonly type: "tuple";
+        }, {
+            readonly internalType: "Fixed6";
+            readonly name: "totalAssets";
+            readonly type: "int256";
+        }, {
+            readonly internalType: "UFixed6";
+            readonly name: "totalShares";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "totalMarkets";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "contract IMarket";
+                readonly name: "market";
+                readonly type: "address";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "weight";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "leverage";
+                readonly type: "uint256";
+            }];
+            readonly internalType: "struct Registration[]";
+            readonly name: "registrations";
+            readonly type: "tuple[]";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "uint256";
+                readonly name: "current";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "latest";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "shares";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "assets";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "deposit";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "redemption";
+                readonly type: "uint256";
+            }];
+            readonly internalType: "struct Account";
+            readonly name: "vaultAccount";
+            readonly type: "tuple";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "UFixed6";
+                readonly name: "deposit";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "redemption";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "shares";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "Fixed6";
+                readonly name: "assets";
+                readonly type: "int256";
+            }, {
+                readonly internalType: "Fixed6";
+                readonly name: "tradeFee";
+                readonly type: "int256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "settlementFee";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "deposits";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "redemptions";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "timestamp";
+                readonly type: "uint256";
+            }];
+            readonly internalType: "struct Checkpoint";
+            readonly name: "latestCheckpoint";
+            readonly type: "tuple";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "UFixed6";
+                readonly name: "deposit";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "redemption";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "shares";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "Fixed6";
+                readonly name: "assets";
+                readonly type: "int256";
+            }, {
+                readonly internalType: "Fixed6";
+                readonly name: "tradeFee";
+                readonly type: "int256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "settlementFee";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "deposits";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "redemptions";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "timestamp";
+                readonly type: "uint256";
+            }];
+            readonly internalType: "struct Checkpoint";
+            readonly name: "currentCheckpoint";
+            readonly type: "tuple";
+        }, {
+            readonly internalType: "UFixed6";
+            readonly name: "vaultMinimum";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "Fixed6";
+            readonly name: "totalMarketCollateral";
+            readonly type: "int256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "contract IMarket";
+                readonly name: "marketAddress";
+                readonly type: "address";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "UFixed6";
+                    readonly name: "fundingFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "interestFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "riskFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "maxPendingGlobal";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "maxPendingLocal";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "maxPriceDeviation";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "bool";
+                    readonly name: "closed";
+                    readonly type: "bool";
+                }, {
+                    readonly internalType: "bool";
+                    readonly name: "settle";
+                    readonly type: "bool";
+                }];
+                readonly internalType: "struct MarketParameter";
+                readonly name: "parameter";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "UFixed6";
+                    readonly name: "margin";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "maintenance";
+                    readonly type: "uint256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "linearFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "proportionalFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "adiabaticFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "scale";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct LinearAdiabatic6";
+                    readonly name: "takerFee";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "linearFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "proportionalFee";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "scale";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct NoopAdiabatic6";
+                    readonly name: "makerFee";
+                    readonly type: "tuple";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerLimit";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "efficiencyLimit";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "liquidationFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "minRate";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "maxRate";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "targetRate";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "UFixed6";
+                        readonly name: "targetUtilization";
+                        readonly type: "uint256";
+                    }];
+                    readonly internalType: "struct UJumpRateUtilizationCurve6";
+                    readonly name: "utilizationCurve";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "UFixed6";
+                        readonly name: "k";
+                        readonly type: "uint256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "min";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "max";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct PController6";
+                    readonly name: "pController";
+                    readonly type: "tuple";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "minMargin";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "minMaintenance";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "staleAfter";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "bool";
+                    readonly name: "makerReceiveOnly";
+                    readonly type: "bool";
+                }];
+                readonly internalType: "struct RiskParameter";
+                readonly name: "riskParameter";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "currentId";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "latestId";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "protocolFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "oracleFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "riskFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "latestPrice";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "exposure";
+                    readonly type: "int256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }, {
+                        readonly internalType: "Fixed6";
+                        readonly name: "_skew";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct PAccumulator6";
+                    readonly name: "pAccumulator";
+                    readonly type: "tuple";
+                }];
+                readonly internalType: "struct Global";
+                readonly name: "global";
+                readonly type: "tuple";
+            }, {
+                readonly internalType: "contract IOracle";
+                readonly name: "oracle";
+                readonly type: "address";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "orders";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "collateral";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "longPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "longNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "shortPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "shortNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "protection";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerReferral";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerReferral";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Order";
+                readonly name: "pendingOrder";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "maker";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "long";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "short";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Position";
+                readonly name: "position";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "maker";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "long";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "short";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Position";
+                readonly name: "nextPosition";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "maker";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "long";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "short";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Position[]";
+                readonly name: "pendingPositions";
+                readonly type: "tuple[]";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "bool";
+                    readonly name: "valid";
+                    readonly type: "bool";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "price";
+                    readonly type: "int256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "makerValue";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "longValue";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "shortValue";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "makerFee";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "takerFee";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "makerOffset";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "takerPosOffset";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "takerNegOffset";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "settlementFee";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "liquidationFee";
+                    readonly type: "tuple";
+                }];
+                readonly internalType: "struct Version[]";
+                readonly name: "versions";
+                readonly type: "tuple[]";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "price";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "bool";
+                    readonly name: "valid";
+                    readonly type: "bool";
+                }];
+                readonly internalType: "struct OracleVersion";
+                readonly name: "latestOracleVersion";
+                readonly type: "tuple";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "currentOracleVersion";
+                readonly type: "uint256";
+            }];
+            readonly internalType: "struct Lens.MarketSnapshot[]";
+            readonly name: "marketSnapshots";
+            readonly type: "tuple[]";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "contract IMarket";
+                readonly name: "marketAddress";
+                readonly type: "address";
+            }, {
+                readonly internalType: "address";
+                readonly name: "account";
+                readonly type: "address";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "currentId";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "latestId";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "collateral";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "claimable";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Local";
+                readonly name: "local";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "orders";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "collateral";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "longPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "longNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "shortPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "shortNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "protection";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerReferral";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerReferral";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Order";
+                readonly name: "latestOrder";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "orders";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "collateral";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "longPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "longNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "shortPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "shortNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "protection";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "makerReferral";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerReferral";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Order";
+                readonly name: "pendingOrder";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "orders";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "notional";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "referral";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Guarantee";
+                readonly name: "latestGuarantee";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "orders";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "notional";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerPos";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerNeg";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "takerFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "referral";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Guarantee";
+                readonly name: "pendingGuarantee";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "maker";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "long";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "short";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Position";
+                readonly name: "position";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "maker";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "long";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "short";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Position";
+                readonly name: "nextPosition";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "Fixed6";
+                    readonly name: "tradeFee";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "settlementFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "transfer";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "collateral";
+                    readonly type: "int256";
+                }];
+                readonly internalType: "struct Checkpoint";
+                readonly name: "checkpoint";
+                readonly type: "tuple";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "maker";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "long";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "short";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct Position[]";
+                readonly name: "pendingPositions";
+                readonly type: "tuple[]";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "bool";
+                    readonly name: "valid";
+                    readonly type: "bool";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "price";
+                    readonly type: "int256";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "makerValue";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "longValue";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "shortValue";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "makerFee";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "takerFee";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "makerOffset";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "takerPosOffset";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "takerNegOffset";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "settlementFee";
+                    readonly type: "tuple";
+                }, {
+                    readonly components: readonly [{
+                        readonly internalType: "Fixed6";
+                        readonly name: "_value";
+                        readonly type: "int256";
+                    }];
+                    readonly internalType: "struct Accumulator6";
+                    readonly name: "liquidationFee";
+                    readonly type: "tuple";
+                }];
+                readonly internalType: "struct Version[]";
+                readonly name: "versions";
+                readonly type: "tuple[]";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "uint256";
+                    readonly name: "timestamp";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "Fixed6";
+                    readonly name: "price";
+                    readonly type: "int256";
+                }, {
+                    readonly internalType: "bool";
+                    readonly name: "valid";
+                    readonly type: "bool";
+                }];
+                readonly internalType: "struct OracleVersion[]";
+                readonly name: "oracleVersions";
+                readonly type: "tuple[]";
+            }, {
+                readonly components: readonly [{
+                    readonly internalType: "UFixed6";
+                    readonly name: "settlementFee";
+                    readonly type: "uint256";
+                }, {
+                    readonly internalType: "UFixed6";
+                    readonly name: "oracleFee";
+                    readonly type: "uint256";
+                }];
+                readonly internalType: "struct OracleReceipt[]";
+                readonly name: "oracleReceipts";
+                readonly type: "tuple[]";
+            }];
+            readonly internalType: "struct Lens.MarketAccountSnapshot[]";
+            readonly name: "marketVaultSnapshots";
+            readonly type: "tuple[]";
+        }];
+        readonly internalType: "struct VaultLens.VaultSnapshot";
+        readonly name: "vaultSnapshot";
+        readonly type: "tuple";
+    }];
+    readonly stateMutability: "view";
+    readonly type: "function";
+}, {
+    readonly inputs: readonly [{
+        readonly internalType: "contract IVault";
+        readonly name: "vault";
+        readonly type: "address";
+    }, {
+        readonly internalType: "address";
+        readonly name: "account";
+        readonly type: "address";
+    }, {
+        readonly internalType: "address";
+        readonly name: "multiInvoker";
+        readonly type: "address";
+    }, {
+        readonly internalType: "UFixed6";
+        readonly name: "vaultShares";
+        readonly type: "uint256";
+    }, {
+        readonly internalType: "Fixed6";
+        readonly name: "vaultAssets";
+        readonly type: "int256";
+    }];
+    readonly name: "snapshotVaultAccount";
+    readonly outputs: readonly [{
+        readonly components: readonly [{
+            readonly internalType: "contract IVault";
+            readonly name: "vault";
+            readonly type: "address";
+        }, {
+            readonly internalType: "address";
+            readonly name: "account";
+            readonly type: "address";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "uint256";
+                readonly name: "current";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
+                readonly name: "latest";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "shares";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "assets";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "deposit";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "UFixed6";
+                readonly name: "redemption";
+                readonly type: "uint256";
+            }];
+            readonly internalType: "struct Account";
+            readonly name: "accountData";
+            readonly type: "tuple";
+        }, {
+            readonly internalType: "UFixed6";
+            readonly name: "assets";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "UFixed6";
+            readonly name: "redemptionAssets";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "multiInvokerApproved";
+            readonly type: "bool";
+        }];
+        readonly internalType: "struct VaultLens.VaultAccountSnapshot";
+        readonly name: "vaultAccountSnapshot";
+        readonly type: "tuple";
+    }];
+    readonly stateMutability: "view";
+    readonly type: "function";
+}, {
+    readonly inputs: readonly [{
+        readonly internalType: "contract IVault";
+        readonly name: "vault";
+        readonly type: "address";
+    }, {
+        readonly internalType: "address";
+        readonly name: "account";
+        readonly type: "address";
+    }];
+    readonly name: "updateAndSettle";
+    readonly outputs: readonly [{
+        readonly internalType: "bytes";
+        readonly name: "updateErr";
+        readonly type: "bytes";
+    }, {
+        readonly internalType: "bytes";
+        readonly name: "settleErr";
+        readonly type: "bytes";
+    }];
+    readonly stateMutability: "nonpayable";
+    readonly type: "function";
+}];
+export declare const VaultLensDeployedBytecode: "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806332dd5bd41461005157806366e7f42314610081578063698fc13d146100b1578063ea646943146100e2575b600080fd5b61006b600480360381019061006691906122b9565b610112565b6040516100789190613b0b565b60405180910390f35b61009b60048036038101906100969190613b59565b61075f565b6040516100a89190613cf0565b60405180910390f35b6100cb60048036038101906100c69190613d12565b610fa4565b6040516100d9929190613d9c565b60405180910390f35b6100fc60048036038101906100f79190613e2b565b6111b9565b6040516101099190613f25565b60405180910390f35b61011a6115ee565b6000845167ffffffffffffffff81111561013757610136611ccb565b5b60405190808252806020026020018201604052801561017057816020015b61015d611629565b8152602001906001900390816101555790505b5090506000855167ffffffffffffffff8111156101905761018f611ccb565b5b6040519080825280602002602001820160405280156101c957816020015b6101b66116c6565b8152602001906001900390816101ae5790505b50905060005b86518110156102aa576101fe8782815181106101ee576101ed613f41565b5b602002602001015189600061075f565b83828151811061021157610210613f41565b5b602002602001018190525061027f87828151811061023257610231613f41565b5b6020026020010151878786858151811061024f5761024e613f41565b5b60200260200101516080015187868151811061026e5761026d613f41565b5b6020026020010151606001516111b9565b82828151811061029257610291613f41565b5b602002602001018190525080806001019150506101cf565b508183606001516000018190525080836060015160200181905250875167ffffffffffffffff8111156102e0576102df611ccb565b5b60405190808252806020026020018201604052801561031357816020015b60608152602001906001900390816102fe5790505b50836000018190525060005b8851811015610476578773ffffffffffffffffffffffffffffffffffffffff1663a05a212e8a838151811061035757610356613f41565b5b6020026020010151600001518b848151811061037657610375613f41565b5b6020026020010151602001518c858151811061039557610394613f41565b5b6020026020010151604001518d86815181106103b4576103b3613f41565b5b6020026020010151606001518e87815181106103d3576103d2613f41565b5b6020026020010151608001516040518663ffffffff1660e01b81526004016103ff95949392919061405e565b6000604051808303816000875af115801561041e573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250810190610447919061412f565b8460000151828151811061045e5761045d613f41565b5b6020026020010181905250808060010191505061031f565b50855167ffffffffffffffff81111561049257610491611ccb565b5b6040519080825280602002602001820160405280156104c557816020015b60608152602001906001900390816104b05790505b508360400181905250855167ffffffffffffffff8111156104e9576104e8611ccb565b5b60405190808252806020026020018201604052801561051c57816020015b60608152602001906001900390816105075790505b50836020018190525060005b86518110156105a65761055587828151811061054757610546613f41565b5b602002602001015187610fa4565b8560200151838151811061056c5761056b613f41565b5b602002602001018660400151848151811061058a57610589613f41565b5b6020026020010182905282905250508080600101915050610528565b506000865167ffffffffffffffff8111156105c4576105c3611ccb565b5b6040519080825280602002602001820160405280156105fd57816020015b6105ea611629565b8152602001906001900390816105e25790505b5090506000875167ffffffffffffffff81111561061d5761061c611ccb565b5b60405190808252806020026020018201604052801561065657816020015b6106436116c6565b81526020019060019003908161063b5790505b50905060005b88518110156107375761068b89828151811061067b5761067a613f41565b5b60200260200101518b600161075f565b83828151811061069e5761069d613f41565b5b602002602001018190525061070c8982815181106106bf576106be613f41565b5b602002602001015189898685815181106106dc576106db613f41565b5b6020026020010151608001518786815181106106fb576106fa613f41565b5b6020026020010151606001516111b9565b82828151811061071f5761071e613f41565b5b6020026020010181905250808060010191505061065c565b5081856080015160000181905250808560800151602001819052505050505095945050505050565b610767611629565b83816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508373ffffffffffffffffffffffffffffffffffffffff166306fdde036040518163ffffffff1660e01b8152600401600060405180830381865afa1580156107ea573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f820116820180604052508101906108139190614219565b81602001819052508373ffffffffffffffffffffffffffffffffffffffff1663ad4d4e296040518163ffffffff1660e01b81526004016040805180830381865afa158015610865573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061088991906142c7565b81604001819052508373ffffffffffffffffffffffffffffffffffffffff166301e1d1146040518163ffffffff1660e01b8152600401602060405180830381865afa1580156108dc573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109009190614309565b8160600181815250508373ffffffffffffffffffffffffffffffffffffffff16633a98ef396040518163ffffffff1660e01b8152600401602060405180830381865afa158015610954573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109789190614336565b8160800181815250508373ffffffffffffffffffffffffffffffffffffffff16638162486b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156109cc573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109f09190614378565b8160a00181815250508060a0015167ffffffffffffffff811115610a1757610a16611ccb565b5b604051908082528060200260200182016040528015610a5057816020015b610a3d611730565b815260200190600190039081610a355790505b508160c001819052508060a0015167ffffffffffffffff811115610a7757610a76611ccb565b5b604051908082528060200260200182016040528015610ab057816020015b610a9d611767565b815260200190600190039081610a955790505b508161018001819052508060a0015167ffffffffffffffff811115610ad857610ad7611ccb565b5b604051908082528060200260200182016040528015610b1157816020015b610afe61181e565b815260200190600190039081610af65790505b50816101a001819052508373ffffffffffffffffffffffffffffffffffffffff16635e5c06e260006040518263ffffffff1660e01b8152600401610b5591906143b4565b60c060405180830381865afa158015610b72573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b96919061446f565b8160e001819052508373ffffffffffffffffffffffffffffffffffffffff1663b8a242528260e00151602001516040518263ffffffff1660e01b8152600401610bdf919061449c565b61012060405180830381865afa158015610bfd573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c219190614597565b8161010001819052508373ffffffffffffffffffffffffffffffffffffffff1663b8a242528260e00151600001516040518263ffffffff1660e01b8152600401610c6b919061449c565b61012060405180830381865afa158015610c89573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610cad9190614597565b81610120018190525060005b8160a00151811015610f6b578473ffffffffffffffffffffffffffffffffffffffff1663f4ddb5be826040518263ffffffff1660e01b8152600401610cfe919061449c565b606060405180830381865afa158015610d1b573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d3f9190614667565b8260c001518281518110610d5657610d55613f41565b5b60200260200101819052508373ffffffffffffffffffffffffffffffffffffffff16636eb79f6a8360c001518381518110610d9457610d93613f41565b5b6020026020010151600001516040518263ffffffff1660e01b8152600401610dbc91906146a3565b600060405180830381865afa158015610dd9573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250810190610e029190615259565b8261018001518281518110610e1a57610e19613f41565b5b60200260200101819052508373ffffffffffffffffffffffffffffffffffffffff16637987bd7f8360c001518381518110610e5857610e57613f41565b5b602002602001015160000151876040518363ffffffff1660e01b8152600401610e829291906152a2565b600060405180830381865afa158015610e9f573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250810190610ec89190615808565b826101a001518281518110610ee057610edf613f41565b5b6020026020010181905250610f0b82604001516020015183610140015161146f90919063ffffffff16565b82610140018181525050610f54826101a001518281518110610f3057610f2f613f41565b5b6020026020010151604001516040015183610160015161148590919063ffffffff16565b826101600181815250508080600101915050610cb9565b508115610f9d57610f938161012001516060015182610160015161148590919063ffffffff16565b8160600181815250505b9392505050565b60608061103e848573ffffffffffffffffffffffffffffffffffffffff166338d52e0f6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610ff6573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061101a919061587d565b73ffffffffffffffffffffffffffffffffffffffff1661149b90919063ffffffff16565b8373ffffffffffffffffffffffffffffffffffffffff1663d2c3aaf23060008060006040518563ffffffff1660e01b815260040161107f94939291906158b9565b600060405180830381600087803b15801561109957600080fd5b505af19250505080156110aa575060015b6110e9573d80600081146110da576040519150601f19603f3d011682016040523d82523d6000602084013e6110df565b606091505b50809250506110fc565b6040518060200160405280600081525091505b8373ffffffffffffffffffffffffffffffffffffffff16636a256b29846040518263ffffffff1660e01b815260040161113591906143b4565b600060405180830381600087803b15801561114f57600080fd5b505af1925050508015611160575060015b61119f573d8060008114611190576040519150601f19603f3d011682016040523d82523d6000602084013e611195565b606091505b50809150506111b2565b6040518060200160405280600081525090505b9250929050565b6111c16116c6565b85816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505084816020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508573ffffffffffffffffffffffffffffffffffffffff16635e5c06e2866040518263ffffffff1660e01b815260040161126a91906143b4565b60c060405180830381865afa158015611287573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906112ab919061446f565b81604001819052506112bc8361153e565b6112fd576112f86112df6112da60008561154a90919063ffffffff16565b61155e565b848360400151604001516115b39092919063ffffffff16565b611307565b8060400151604001515b8160600181815250506113198361153e565b61135a5761135561133c61133760008561154a90919063ffffffff16565b61155e565b84836040015160a001516115b39092919063ffffffff16565b611364565b806040015160a001515b8160800181815250508573ffffffffffffffffffffffffffffffffffffffff1663c45a01556040518163ffffffff1660e01b8152600401602060405180830381865afa1580156113b8573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906113dc919061593c565b73ffffffffffffffffffffffffffffffffffffffff16632637588e86866040518363ffffffff1660e01b8152600401611416929190615969565b602060405180830381865afa158015611433573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906114579190615992565b8160a001901515908115158152505095945050505050565b6000818361147d91906159ee565b905092915050565b600081836114939190615a22565b905092915050565b8173ffffffffffffffffffffffffffffffffffffffff1663095ea7b3827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6040518363ffffffff1660e01b81526004016114f6929190615a66565b6020604051808303816000875af1158015611515573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906115399190615992565b505050565b60008082149050919050565b600061155683836115d5565b905092915050565b60008082905060008112156115aa57806040517fb02ef0870000000000000000000000000000000000000000000000000000000081526004016115a19190615a9e565b60405180910390fd5b80915050919050565b60008183856115c29190615ab9565b6115cc9190615b2a565b90509392505050565b60008183136115e457816115e6565b825b905092915050565b6040518060a001604052806060815260200160608152602001606081526020016116166118e9565b81526020016116236118e9565b81525090565b604051806101c00160405280600073ffffffffffffffffffffffffffffffffffffffff16815260200160608152602001611661611903565b81526020016000815260200160008152602001600081526020016060815260200161168a61191d565b8152602001611697611953565b81526020016116a4611953565b8152602001600081526020016000815260200160608152602001606081525090565b6040518060c00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200161171361191d565b815260200160008152602001600081526020016000151581525090565b6040518060600160405280600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152602001600081525090565b604051806101800160405280600073ffffffffffffffffffffffffffffffffffffffff16815260200161179861199f565b81526020016117a56119f6565b81526020016117b2611a78565b8152602001600073ffffffffffffffffffffffffffffffffffffffff1681526020016117dc611ac3565b81526020016117e9611b24565b81526020016117f6611b24565b81526020016060815260200160608152602001611811611b4c565b8152602001600081525090565b604051806101c00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200161186c611b6f565b8152602001611879611ac3565b8152602001611886611ac3565b8152602001611893611b97565b81526020016118a0611b97565b81526020016118ad611b24565b81526020016118ba611b24565b81526020016118c7611bcd565b8152602001606081526020016060815260200160608152602001606081525090565b604051806040016040528060608152602001606081525090565b604051806040016040528060008152602001600081525090565b6040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040518061012001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b60405180610140016040528060008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000151581526020016000151581525090565b604051806101a001604052806000815260200160008152602001611a18611bf5565b8152602001611a25611c1d565b8152602001600081526020016000815260200160008152602001611a47611c3e565b8152602001611a54611c66565b81526020016000815260200160008152602001600081526020016000151581525090565b60405180610100016040528060008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001611abd611c87565b81525090565b6040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040518060800160405280600081526020016000815260200160008152602001600081525090565b604051806060016040528060008152602001600081526020016000151581525090565b6040518060800160405280600081526020016000815260200160008152602001600081525090565b6040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040518060800160405280600081526020016000815260200160008152602001600081525090565b6040518060800160405280600081526020016000815260200160008152602001600081525090565b60405180606001604052806000815260200160008152602001600081525090565b6040518060800160405280600081526020016000815260200160008152602001600081525090565b60405180606001604052806000815260200160008152602001600081525090565b604051806040016040528060008152602001600081525090565b6000604051905090565b600080fd5b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b611d0382611cba565b810181811067ffffffffffffffff82111715611d2257611d21611ccb565b5b80604052505050565b6000611d35611ca1565b9050611d418282611cfa565b919050565b600067ffffffffffffffff821115611d6157611d60611ccb565b5b602082029050602081019050919050565b600080fd5b600080fd5b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000611dac82611d81565b9050919050565b6000611dbe82611da1565b9050919050565b611dce81611db3565b8114611dd957600080fd5b50565b600081359050611deb81611dc5565b92915050565b6000819050919050565b611e0481611df1565b8114611e0f57600080fd5b50565b600081359050611e2181611dfb565b92915050565b600067ffffffffffffffff821115611e4257611e41611ccb565b5b602082029050602081019050919050565b6000819050919050565b611e6681611e53565b8114611e7157600080fd5b50565b600081359050611e8381611e5d565b92915050565b6000611e9c611e9784611e27565b611d2b565b90508083825260208201905060208402830185811115611ebf57611ebe611d72565b5b835b81811015611ee85780611ed48882611e74565b845260208401935050602081019050611ec1565b5050509392505050565b600082601f830112611f0757611f06611cb5565b5b8135611f17848260208601611e89565b91505092915050565b600080fd5b600067ffffffffffffffff821115611f4057611f3f611ccb565b5b611f4982611cba565b9050602081019050919050565b82818337600083830152505050565b6000611f78611f7384611f25565b611d2b565b905082815260208101848484011115611f9457611f93611f20565b5b611f9f848285611f56565b509392505050565b600082601f830112611fbc57611fbb611cb5565b5b8135611fcc848260208601611f65565b91505092915050565b600060a08284031215611feb57611fea611d77565b5b611ff560a0611d2b565b9050600061200584828501611ddc565b600083015250602061201984828501611e12565b602083015250604082013567ffffffffffffffff81111561203d5761203c611d7c565b5b61204984828501611ef2565b604083015250606061205d84828501611e12565b606083015250608082013567ffffffffffffffff81111561208157612080611d7c565b5b61208d84828501611fa7565b60808301525092915050565b60006120ac6120a784611d46565b611d2b565b905080838252602082019050602084028301858111156120cf576120ce611d72565b5b835b8181101561211657803567ffffffffffffffff8111156120f4576120f3611cb5565b5b8086016121018982611fd5565b855260208501945050506020810190506120d1565b5050509392505050565b600082601f83011261213557612134611cb5565b5b8135612145848260208601612099565b91505092915050565b600061215982611da1565b9050919050565b6121698161214e565b811461217457600080fd5b50565b60008135905061218681612160565b92915050565b600067ffffffffffffffff8211156121a7576121a6611ccb565b5b602082029050602081019050919050565b60006121c382611da1565b9050919050565b6121d3816121b8565b81146121de57600080fd5b50565b6000813590506121f0816121ca565b92915050565b60006122096122048461218c565b611d2b565b9050808382526020820190506020840283018581111561222c5761222b611d72565b5b835b81811015612255578061224188826121e1565b84526020840193505060208101905061222e565b5050509392505050565b600082601f83011261227457612273611cb5565b5b81356122848482602086016121f6565b91505092915050565b61229681611da1565b81146122a157600080fd5b50565b6000813590506122b38161228d565b92915050565b600080600080600060a086880312156122d5576122d4611cab565b5b600086013567ffffffffffffffff8111156122f3576122f2611cb0565b5b6122ff88828901612120565b955050602061231088828901612177565b945050604086013567ffffffffffffffff81111561233157612330611cb0565b5b61233d8882890161225f565b935050606061234e888289016122a4565b925050608061235f888289016122a4565b9150509295509295909350565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b600081519050919050565b600082825260208201905092915050565b60005b838110156123d25780820151818401526020810190506123b7565b60008484015250505050565b60006123e982612398565b6123f381856123a3565b93506124038185602086016123b4565b61240c81611cba565b840191505092915050565b600061242383836123de565b905092915050565b6000602082019050919050565b60006124438261236c565b61244d8185612377565b93508360208202850161245f85612388565b8060005b8581101561249b578484038952815161247c8582612417565b94506124878361242b565b925060208a01995050600181019050612463565b50829750879550505050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6000819050919050565b60006124fe6124f96124f484611d81565b6124d9565b611d81565b9050919050565b6000612510826124e3565b9050919050565b600061252282612505565b9050919050565b61253281612517565b82525050565b600081519050919050565b600082825260208201905092915050565b600061255f82612538565b6125698185612543565b93506125798185602086016123b4565b61258281611cba565b840191505092915050565b60006125a86125a361259e84611df1565b6124d9565b611df1565b9050919050565b6125b88161258d565b82525050565b6040820160008201516125d460008501826125af565b5060208201516125e760208501826125af565b50505050565b6000819050919050565b600061261261260d612608846125ed565b6124d9565b6125ed565b9050919050565b612622816125f7565b82525050565b61263181611df1565b82525050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b600061266e82612505565b9050919050565b61267e81612663565b82525050565b60608201600082015161269a6000850182612675565b5060208201516126ad60208501826125af565b5060408201516126c060408501826125af565b50505050565b60006126d28383612684565b60608301905092915050565b6000602082019050919050565b60006126f682612637565b6127008185612642565b935061270b83612653565b8060005b8381101561273c57815161272388826126c6565b975061272e836126de565b92505060018101905061270f565b5085935050505092915050565b60c08201600082015161275f6000850182612628565b5060208201516127726020850182612628565b50604082015161278560408501826125af565b50606082015161279860608501826125af565b5060808201516127ab60808501826125af565b5060a08201516127be60a08501826125af565b50505050565b610120820160008201516127db60008501826125af565b5060208201516127ee60208501826125af565b50604082015161280160408501826125af565b5060608201516128146060850182612619565b5060808201516128276080850182612619565b5060a082015161283a60a08501826125af565b5060c082015161284d60c0850182612628565b5060e082015161286060e0850182612628565b50610100820151612875610100850182612628565b50505050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b60008115159050919050565b6128bc816128a7565b82525050565b610140820160008201516128d960008501826125af565b5060208201516128ec60208501826125af565b5060408201516128ff60408501826125af565b50606082015161291260608501826125af565b50608082015161292560808501826125af565b5060a082015161293860a0850182612628565b5060c082015161294b60c0850182612628565b5060e082015161295e60e08501826125af565b506101008201516129736101008501826128b3565b506101208201516129886101208501826128b3565b50505050565b6080820160008201516129a460008501826125af565b5060208201516129b760208501826125af565b5060408201516129ca60408501826125af565b5060608201516129dd60608501826125af565b50505050565b6060820160008201516129f960008501826125af565b506020820151612a0c60208501826125af565b506040820151612a1f60408501826125af565b50505050565b608082016000820151612a3b60008501826125af565b506020820151612a4e60208501826125af565b506040820151612a6160408501826125af565b506060820151612a7460608501826125af565b50505050565b606082016000820151612a9060008501826125af565b506020820151612aa36020850182612619565b506040820151612ab66040850182612619565b50505050565b6102e082016000820151612ad360008501826125af565b506020820151612ae660208501826125af565b506040820151612af9604085018261298e565b506060820151612b0c60c08501826129e3565b506080820151612b206101208501826125af565b5060a0820151612b346101408501826125af565b5060c0820151612b486101608501826125af565b5060e0820151612b5c610180850182612a25565b50610100820151612b71610200850182612a7a565b50610120820151612b866102608501826125af565b50610140820151612b9b6102808501826125af565b50610160820151612bb06102a0850182612628565b50610180820151612bc56102c08501826128b3565b50505050565b604082016000820151612be16000850182612619565b506020820151612bf46020850182612619565b50505050565b61012082016000820151612c116000850182612628565b506020820151612c246020850182612628565b506040820151612c3760408501826125af565b506060820151612c4a60608501826125af565b506080820151612c5d60808501826125af565b5060a0820151612c7060a0850182612619565b5060c0820151612c8360c0850182612619565b5060e0820151612c9660e0850182612bcb565b50505050565b6000612ca782612505565b9050919050565b612cb781612c9c565b82525050565b61018082016000820151612cd46000850182612628565b506020820151612ce76020850182612628565b506040820151612cfa6040850182612619565b506060820151612d0d60608501826125af565b506080820151612d2060808501826125af565b5060a0820151612d3360a08501826125af565b5060c0820151612d4660c08501826125af565b5060e0820151612d5960e08501826125af565b50610100820151612d6e6101008501826125af565b50610120820151612d83610120850182612628565b50610140820151612d986101408501826125af565b50610160820151612dad6101608501826125af565b50505050565b608082016000820151612dc96000850182612628565b506020820151612ddc60208501826125af565b506040820151612def60408501826125af565b506060820151612e0260608501826125af565b50505050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6000612e408383612db3565b60808301905092915050565b6000602082019050919050565b6000612e6482612e08565b612e6e8185612e13565b9350612e7983612e24565b8060005b83811015612eaa578151612e918882612e34565b9750612e9c83612e4c565b925050600181019050612e7d565b5085935050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b602082016000820151612ef96000850182612619565b50505050565b61018082016000820151612f1660008501826128b3565b506020820151612f296020850182612619565b506040820151612f3c6040850182612ee3565b506060820151612f4f6060850182612ee3565b506080820151612f626080850182612ee3565b5060a0820151612f7560a0850182612ee3565b5060c0820151612f8860c0850182612ee3565b5060e0820151612f9b60e0850182612ee3565b50610100820151612fb0610100850182612ee3565b50610120820151612fc5610120850182612ee3565b50610140820151612fda610140850182612ee3565b50610160820151612fef610160850182612ee3565b50505050565b60006130018383612eff565b6101808301905092915050565b6000602082019050919050565b600061302682612eb7565b6130308185612ec2565b935061303b83612ed3565b8060005b8381101561306c5781516130538882612ff5565b975061305e8361300e565b92505060018101905061303f565b5085935050505092915050565b60608201600082015161308f6000850182612628565b5060208201516130a26020850182612619565b5060408201516130b560408501826128b3565b50505050565b60006108c0830160008301516130d46000860182612675565b5060208301516130e760208601826128c2565b5060408301516130fb610160860182612abc565b50606083015161310f610440860182612bfa565b506080830151613123610560860182612cae565b5060a0830151613137610580860182612cbd565b5060c083015161314b610700860182612db3565b5060e083015161315f610780860182612db3565b506101008301518482036108008601526131798282612e59565b915050610120830151848203610820860152613195828261301b565b9150506101408301516131ac610840860182613079565b506101608301516131c16108a0860182612628565b508091505092915050565b60006131d883836130bb565b905092915050565b6000602082019050919050565b60006131f88261287b565b6132028185612886565b93508360208202850161321485612897565b8060005b85811015613250578484038952815161323185826131cc565b945061323c836131e0565b925060208a01995050600181019050613218565b50829750879550505050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b61329781611da1565b82525050565b6080820160008201516132b36000850182612628565b5060208201516132c66020850182612628565b5060408201516132d96040850182612619565b5060608201516132ec60608501826125af565b50505050565b60c0820160008201516133086000850182612628565b50602082015161331b6020850182612619565b50604082015161332e60408501826125af565b50606082015161334160608501826125af565b50608082015161335460808501826125af565b5060a082015161336760a08501826125af565b50505050565b6080820160008201516133836000850182612619565b50602082015161339660208501826125af565b5060408201516133a96040850182612619565b5060608201516133bc6060850182612619565b50505050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b60006133fa8383613079565b60608301905092915050565b6000602082019050919050565b600061341e826133c2565b61342881856133cd565b9350613433836133de565b8060005b8381101561346457815161344b88826133ee565b975061345683613406565b925050600181019050613437565b5085935050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6040820160008201516134b360008501826125af565b5060208201516134c660208501826125af565b50505050565b60006134d8838361349d565b60408301905092915050565b6000602082019050919050565b60006134fc82613471565b613506818561347c565b93506135118361348d565b8060005b8381101561354257815161352988826134cc565b9750613534836134e4565b925050600181019050613515565b5085935050505092915050565b6000610740830160008301516135686000860182612675565b50602083015161357b602086018261328e565b50604083015161358e604086018261329d565b5060608301516135a160c0860182612cbd565b5060808301516135b5610240860182612cbd565b5060a08301516135c96103c08601826132f2565b5060c08301516135dd6104808601826132f2565b5060e08301516135f1610540860182612db3565b506101008301516136066105c0860182612db3565b5061012083015161361b61064086018261336d565b506101408301518482036106c08601526136358282612e59565b9150506101608301518482036106e0860152613651828261301b565b91505061018083015184820361070086015261366d8282613413565b9150506101a083015184820361072086015261368982826134f1565b9150508091505092915050565b60006136a2838361354f565b905092915050565b6000602082019050919050565b60006136c282613262565b6136cc818561326d565b9350836020820285016136de8561327e565b8060005b8581101561371a57848403895281516136fb8582613696565b9450613706836136aa565b925060208a019950506001810190506136e2565b50829750879550505050505092915050565b6000610480830160008301516137456000860182612529565b506020830151848203602086015261375d8282612554565b915050604083015161377260408601826125be565b5060608301516137856080860182612619565b50608083015161379860a08601826125af565b5060a08301516137ab60c0860182612628565b5060c083015184820360e08601526137c382826126eb565b91505060e08301516137d9610100860182612749565b506101008301516137ee6101c08601826127c4565b506101208301516138036102e08601826127c4565b506101408301516138186104008601826125af565b5061016083015161382d610420860182612619565b5061018083015184820361044086015261384782826131ed565b9150506101a083015184820361046086015261386382826136b7565b9150508091505092915050565b600061387c838361372c565b905092915050565b6000602082019050919050565b600061389c826124ad565b6138a681856124b8565b9350836020820285016138b8856124c9565b8060005b858110156138f457848403895281516138d58582613870565b94506138e083613884565b925060208a019950506001810190506138bc565b50829750879550505050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b610160820160008201516139496000850182612529565b50602082015161395c602085018261328e565b50604082015161396f6040850182612749565b5060608201516139836101008501826125af565b5060808201516139976101208501826125af565b5060a08201516139ab6101408501826128b3565b50505050565b60006139bd8383613932565b6101608301905092915050565b6000602082019050919050565b60006139e282613906565b6139ec8185613911565b93506139f783613922565b8060005b83811015613a28578151613a0f88826139b1565b9750613a1a836139ca565b9250506001810190506139fb565b5085935050505092915050565b60006040830160008301518482036000860152613a528282613891565b91505060208301518482036020860152613a6c82826139d7565b9150508091505092915050565b600060a0830160008301518482036000860152613a968282612438565b91505060208301518482036020860152613ab08282612438565b91505060408301518482036040860152613aca8282612438565b91505060608301518482036060860152613ae48282613a35565b91505060808301518482036080860152613afe8282613a35565b9150508091505092915050565b60006020820190508181036000830152613b258184613a79565b905092915050565b613b36816128a7565b8114613b4157600080fd5b50565b600081359050613b5381613b2d565b92915050565b600080600060608486031215613b7257613b71611cab565b5b6000613b80868287016121e1565b9350506020613b9186828701612177565b9250506040613ba286828701613b44565b9150509250925092565b600061048083016000830151613bc56000860182612529565b5060208301518482036020860152613bdd8282612554565b9150506040830151613bf260408601826125be565b506060830151613c056080860182612619565b506080830151613c1860a08601826125af565b5060a0830151613c2b60c0860182612628565b5060c083015184820360e0860152613c4382826126eb565b91505060e0830151613c59610100860182612749565b50610100830151613c6e6101c08601826127c4565b50610120830151613c836102e08601826127c4565b50610140830151613c986104008601826125af565b50610160830151613cad610420860182612619565b50610180830151848203610440860152613cc782826131ed565b9150506101a0830151848203610460860152613ce382826136b7565b9150508091505092915050565b60006020820190508181036000830152613d0a8184613bac565b905092915050565b60008060408385031215613d2957613d28611cab565b5b6000613d37858286016121e1565b9250506020613d48858286016122a4565b9150509250929050565b600082825260208201905092915050565b6000613d6e82612398565b613d788185613d52565b9350613d888185602086016123b4565b613d9181611cba565b840191505092915050565b60006040820190508181036000830152613db68185613d63565b90508181036020830152613dca8184613d63565b90509392505050565b613ddc81611df1565b8114613de757600080fd5b50565b600081359050613df981613dd3565b92915050565b613e08816125ed565b8114613e1357600080fd5b50565b600081359050613e2581613dff565b92915050565b600080600080600060a08688031215613e4757613e46611cab565b5b6000613e55888289016121e1565b9550506020613e66888289016122a4565b9450506040613e77888289016122a4565b9350506060613e8888828901613dea565b9250506080613e9988828901613e16565b9150509295509295909350565b61016082016000820151613ebd6000850182612529565b506020820151613ed0602085018261328e565b506040820151613ee36040850182612749565b506060820151613ef76101008501826125af565b506080820151613f0b6101208501826125af565b5060a0820151613f1f6101408501826128b3565b50505050565b600061016082019050613f3b6000830184613ea6565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b6000613f7b82612505565b9050919050565b613f8b81613f70565b82525050565b613f9a81611df1565b82525050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b613fd581611e53565b82525050565b6000613fe78383613fcc565b60208301905092915050565b6000602082019050919050565b600061400b82613fa0565b6140158185613fab565b935061402083613fbc565b8060005b838110156140515781516140388882613fdb565b975061404383613ff3565b925050600181019050614024565b5085935050505092915050565b600060a0820190506140736000830188613f82565b6140806020830187613f91565b81810360408301526140928186614000565b90506140a16060830185613f91565b81810360808301526140b38184613d63565b90509695505050505050565b60006140d26140cd84611f25565b611d2b565b9050828152602081018484840111156140ee576140ed611f20565b5b6140f98482856123b4565b509392505050565b600082601f83011261411657614115611cb5565b5b81516141268482602086016140bf565b91505092915050565b60006020828403121561414557614144611cab565b5b600082015167ffffffffffffffff81111561416357614162611cb0565b5b61416f84828501614101565b91505092915050565b600067ffffffffffffffff82111561419357614192611ccb565b5b61419c82611cba565b9050602081019050919050565b60006141bc6141b784614178565b611d2b565b9050828152602081018484840111156141d8576141d7611f20565b5b6141e38482856123b4565b509392505050565b600082601f830112614200576141ff611cb5565b5b81516142108482602086016141a9565b91505092915050565b60006020828403121561422f5761422e611cab565b5b600082015167ffffffffffffffff81111561424d5761424c611cb0565b5b614259848285016141eb565b91505092915050565b60008151905061427181613dd3565b92915050565b60006040828403121561428d5761428c611d77565b5b6142976040611d2b565b905060006142a784828501614262565b60008301525060206142bb84828501614262565b60208301525092915050565b6000604082840312156142dd576142dc611cab565b5b60006142eb84828501614277565b91505092915050565b60008151905061430381613dff565b92915050565b60006020828403121561431f5761431e611cab565b5b600061432d848285016142f4565b91505092915050565b60006020828403121561434c5761434b611cab565b5b600061435a84828501614262565b91505092915050565b60008151905061437281611dfb565b92915050565b60006020828403121561438e5761438d611cab565b5b600061439c84828501614363565b91505092915050565b6143ae81611da1565b82525050565b60006020820190506143c960008301846143a5565b92915050565b600060c082840312156143e5576143e4611d77565b5b6143ef60c0611d2b565b905060006143ff84828501614363565b600083015250602061441384828501614363565b602083015250604061442784828501614262565b604083015250606061443b84828501614262565b606083015250608061444f84828501614262565b60808301525060a061446384828501614262565b60a08301525092915050565b600060c0828403121561448557614484611cab565b5b6000614493848285016143cf565b91505092915050565b60006020820190506144b16000830184613f91565b92915050565b600061012082840312156144ce576144cd611d77565b5b6144d9610120611d2b565b905060006144e984828501614262565b60008301525060206144fd84828501614262565b602083015250604061451184828501614262565b6040830152506060614525848285016142f4565b6060830152506080614539848285016142f4565b60808301525060a061454d84828501614262565b60a08301525060c061456184828501614363565b60c08301525060e061457584828501614363565b60e08301525061010061458a84828501614363565b6101008301525092915050565b600061012082840312156145ae576145ad611cab565b5b60006145bc848285016144b7565b91505092915050565b60006145d082611da1565b9050919050565b6145e0816145c5565b81146145eb57600080fd5b50565b6000815190506145fd816145d7565b92915050565b60006060828403121561461957614618611d77565b5b6146236060611d2b565b90506000614633848285016145ee565b600083015250602061464784828501614262565b602083015250604061465b84828501614262565b60408301525092915050565b60006060828403121561467d5761467c611cab565b5b600061468b84828501614603565b91505092915050565b61469d81612663565b82525050565b60006020820190506146b86000830184614694565b92915050565b6000815190506146cd81613b2d565b92915050565b600061014082840312156146ea576146e9611d77565b5b6146f5610140611d2b565b9050600061470584828501614262565b600083015250602061471984828501614262565b602083015250604061472d84828501614262565b604083015250606061474184828501614262565b606083015250608061475584828501614262565b60808301525060a061476984828501614363565b60a08301525060c061477d84828501614363565b60c08301525060e061479184828501614262565b60e0830152506101006147a6848285016146be565b610100830152506101206147bc848285016146be565b6101208301525092915050565b6000608082840312156147df576147de611d77565b5b6147e96080611d2b565b905060006147f984828501614262565b600083015250602061480d84828501614262565b602083015250604061482184828501614262565b604083015250606061483584828501614262565b60608301525092915050565b60006060828403121561485757614856611d77565b5b6148616060611d2b565b9050600061487184828501614262565b600083015250602061488584828501614262565b602083015250604061489984828501614262565b60408301525092915050565b6000608082840312156148bb576148ba611d77565b5b6148c56080611d2b565b905060006148d584828501614262565b60008301525060206148e984828501614262565b60208301525060406148fd84828501614262565b604083015250606061491184828501614262565b60608301525092915050565b60006060828403121561493357614932611d77565b5b61493d6060611d2b565b9050600061494d84828501614262565b6000830152506020614961848285016142f4565b6020830152506040614975848285016142f4565b60408301525092915050565b60006102e0828403121561499857614997611d77565b5b6149a36101a0611d2b565b905060006149b384828501614262565b60008301525060206149c784828501614262565b60208301525060406149db848285016147c9565b60408301525060c06149ef84828501614841565b606083015250610120614a0484828501614262565b608083015250610140614a1984828501614262565b60a083015250610160614a2e84828501614262565b60c083015250610180614a43848285016148a5565b60e083015250610200614a588482850161491d565b61010083015250610260614a6e84828501614262565b61012083015250610280614a8484828501614262565b610140830152506102a0614a9a84828501614363565b610160830152506102c0614ab0848285016146be565b6101808301525092915050565b600060408284031215614ad357614ad2611d77565b5b614add6040611d2b565b90506000614aed848285016142f4565b6000830152506020614b01848285016142f4565b60208301525092915050565b60006101208284031215614b2457614b23611d77565b5b614b2f610100611d2b565b90506000614b3f84828501614363565b6000830152506020614b5384828501614363565b6020830152506040614b6784828501614262565b6040830152506060614b7b84828501614262565b6060830152506080614b8f84828501614262565b60808301525060a0614ba3848285016142f4565b60a08301525060c0614bb7848285016142f4565b60c08301525060e0614bcb84828501614abd565b60e08301525092915050565b6000614be282611da1565b9050919050565b614bf281614bd7565b8114614bfd57600080fd5b50565b600081519050614c0f81614be9565b92915050565b60006101808284031215614c2c57614c2b611d77565b5b614c37610180611d2b565b90506000614c4784828501614363565b6000830152506020614c5b84828501614363565b6020830152506040614c6f848285016142f4565b6040830152506060614c8384828501614262565b6060830152506080614c9784828501614262565b60808301525060a0614cab84828501614262565b60a08301525060c0614cbf84828501614262565b60c08301525060e0614cd384828501614262565b60e083015250610100614ce884828501614262565b61010083015250610120614cfe84828501614363565b61012083015250610140614d1484828501614262565b61014083015250610160614d2a84828501614262565b6101608301525092915050565b600060808284031215614d4d57614d4c611d77565b5b614d576080611d2b565b90506000614d6784828501614363565b6000830152506020614d7b84828501614262565b6020830152506040614d8f84828501614262565b6040830152506060614da384828501614262565b60608301525092915050565b600067ffffffffffffffff821115614dca57614dc9611ccb565b5b602082029050602081019050919050565b6000614dee614de984614daf565b611d2b565b90508083825260208201905060808402830185811115614e1157614e10611d72565b5b835b81811015614e3a5780614e268882614d37565b845260208401935050608081019050614e13565b5050509392505050565b600082601f830112614e5957614e58611cb5565b5b8151614e69848260208601614ddb565b91505092915050565b600067ffffffffffffffff821115614e8d57614e8c611ccb565b5b602082029050602081019050919050565b600060208284031215614eb457614eb3611d77565b5b614ebe6020611d2b565b90506000614ece848285016142f4565b60008301525092915050565b60006101808284031215614ef157614ef0611d77565b5b614efc610180611d2b565b90506000614f0c848285016146be565b6000830152506020614f20848285016142f4565b6020830152506040614f3484828501614e9e565b6040830152506060614f4884828501614e9e565b6060830152506080614f5c84828501614e9e565b60808301525060a0614f7084828501614e9e565b60a08301525060c0614f8484828501614e9e565b60c08301525060e0614f9884828501614e9e565b60e083015250610100614fad84828501614e9e565b61010083015250610120614fc384828501614e9e565b61012083015250610140614fd984828501614e9e565b61014083015250610160614fef84828501614e9e565b6101608301525092915050565b600061500f61500a84614e72565b611d2b565b905080838252602082019050610180840283018581111561503357615032611d72565b5b835b8181101561505d57806150488882614eda565b84526020840193505061018081019050615035565b5050509392505050565b600082601f83011261507c5761507b611cb5565b5b815161508c848260208601614ffc565b91505092915050565b6000606082840312156150ab576150aa611d77565b5b6150b56060611d2b565b905060006150c584828501614363565b60008301525060206150d9848285016142f4565b60208301525060406150ed848285016146be565b60408301525092915050565b60006108c082840312156151105761510f611d77565b5b61511b610180611d2b565b9050600061512b848285016145ee565b600083015250602061513f848285016146d3565b60208301525061016061515484828501614981565b60408301525061044061516984828501614b0d565b60608301525061056061517e84828501614c00565b60808301525061058061519384828501614c15565b60a0830152506107006151a884828501614d37565b60c0830152506107806151bd84828501614d37565b60e08301525061080082015167ffffffffffffffff8111156151e2576151e1611d7c565b5b6151ee84828501614e44565b6101008301525061082082015167ffffffffffffffff81111561521457615213611d7c565b5b61522084828501615067565b6101208301525061084061523684828501615095565b610140830152506108a061524c84828501614363565b6101608301525092915050565b60006020828403121561526f5761526e611cab565b5b600082015167ffffffffffffffff81111561528d5761528c611cb0565b5b615299848285016150f9565b91505092915050565b60006040820190506152b76000830185614694565b6152c460208301846143a5565b9392505050565b6000815190506152da8161228d565b92915050565b6000608082840312156152f6576152f5611d77565b5b6153006080611d2b565b9050600061531084828501614363565b600083015250602061532484828501614363565b6020830152506040615338848285016142f4565b604083015250606061534c84828501614262565b60608301525092915050565b600060c0828403121561536e5761536d611d77565b5b61537860c0611d2b565b9050600061538884828501614363565b600083015250602061539c848285016142f4565b60208301525060406153b084828501614262565b60408301525060606153c484828501614262565b60608301525060806153d884828501614262565b60808301525060a06153ec84828501614262565b60a08301525092915050565b60006080828403121561540e5761540d611d77565b5b6154186080611d2b565b90506000615428848285016142f4565b600083015250602061543c84828501614262565b6020830152506040615450848285016142f4565b6040830152506060615464848285016142f4565b60608301525092915050565b600067ffffffffffffffff82111561548b5761548a611ccb565b5b602082029050602081019050919050565b60006154af6154aa84615470565b611d2b565b905080838252602082019050606084028301858111156154d2576154d1611d72565b5b835b818110156154fb57806154e78882615095565b8452602084019350506060810190506154d4565b5050509392505050565b600082601f83011261551a57615519611cb5565b5b815161552a84826020860161549c565b91505092915050565b600067ffffffffffffffff82111561554e5761554d611ccb565b5b602082029050602081019050919050565b60006040828403121561557557615574611d77565b5b61557f6040611d2b565b9050600061558f84828501614262565b60008301525060206155a384828501614262565b60208301525092915050565b60006155c26155bd84615533565b611d2b565b905080838252602082019050604084028301858111156155e5576155e4611d72565b5b835b8181101561560e57806155fa888261555f565b8452602084019350506040810190506155e7565b5050509392505050565b600082601f83011261562d5761562c611cb5565b5b815161563d8482602086016155af565b91505092915050565b6000610740828403121561565d5761565c611d77565b5b6156686101c0611d2b565b90506000615678848285016145ee565b600083015250602061568c848285016152cb565b60208301525060406156a0848285016152e0565b60408301525060c06156b484828501614c15565b6060830152506102406156c984828501614c15565b6080830152506103c06156de84828501615358565b60a0830152506104806156f384828501615358565b60c08301525061054061570884828501614d37565b60e0830152506105c061571d84828501614d37565b61010083015250610640615733848285016153f8565b610120830152506106c082015167ffffffffffffffff81111561575957615758611d7c565b5b61576584828501614e44565b610140830152506106e082015167ffffffffffffffff81111561578b5761578a611d7c565b5b61579784828501615067565b6101608301525061070082015167ffffffffffffffff8111156157bd576157bc611d7c565b5b6157c984828501615505565b6101808301525061072082015167ffffffffffffffff8111156157ef576157ee611d7c565b5b6157fb84828501615618565b6101a08301525092915050565b60006020828403121561581e5761581d611cab565b5b600082015167ffffffffffffffff81111561583c5761583b611cb0565b5b61584884828501615646565b91505092915050565b61585a81611da1565b811461586557600080fd5b50565b60008151905061587781615851565b92915050565b60006020828403121561589357615892611cab565b5b60006158a184828501615868565b91505092915050565b6158b38161258d565b82525050565b60006080820190506158ce60008301876143a5565b6158db60208301866158aa565b6158e860408301856158aa565b6158f560608301846158aa565b95945050505050565b600061590982611da1565b9050919050565b615919816158fe565b811461592457600080fd5b50565b60008151905061593681615910565b92915050565b60006020828403121561595257615951611cab565b5b600061596084828501615927565b91505092915050565b600060408201905061597e60008301856143a5565b61598b60208301846143a5565b9392505050565b6000602082840312156159a8576159a7611cab565b5b60006159b6848285016146be565b91505092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006159f982611df1565b9150615a0483611df1565b9250828201905080821115615a1c57615a1b6159bf565b5b92915050565b6000615a2d826125ed565b9150615a38836125ed565b925082820190508281121560008312168382126000841215161715615a6057615a5f6159bf565b5b92915050565b6000604082019050615a7b60008301856143a5565b615a886020830184613f91565b9392505050565b615a98816125ed565b82525050565b6000602082019050615ab36000830184615a8f565b92915050565b6000615ac482611df1565b9150615acf83611df1565b9250828202615add81611df1565b91508282048414831517615af457615af36159bf565b5b5092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b6000615b3582611df1565b9150615b4083611df1565b925082615b5057615b4f615afb565b5b82820490509291505056fea264697066735822122079c969acfd66641e2af248898c371c262d89a35fa7516d18e3a8cecc1760d49664736f6c63430008180033";
+//# sourceMappingURL=VaultLens.abi.d.ts.map

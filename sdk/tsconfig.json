@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2021",
+    "lib": ["ES2022", "DOM"],
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "declaration": true,
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext"
+  },
+  "include": ["src/**/*", "hardhat.config.ts"],
+  "exclude": ["examples", "dist", "graph-codegen.ts"]
+}

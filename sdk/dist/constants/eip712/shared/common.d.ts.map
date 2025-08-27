@@ -1,0 +1,1 @@
+{"version":3,"file":"common.d.ts","sourceRoot":"","sources":["../../../../src/constants/eip712/shared/common.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,uBAAuB,EAAE,MAAM,MAAM,CAAA;AAE9C,eAAO,MAAM,aAAa;;;;;;;;;;;;;;;;;;EAyBhB,CAAA;AAEV,eAAO,MAAM,kBAAkB;;;;;;;;;;;;;;;;;;;;CAErB,CAAA;AAEV,MAAM,MAAM,oBAAoB,GAAG,IAAI,CAAC,uBAAuB,CAAC,OAAO,kBAAkB,EAAE,QAAQ,CAAC,EAAE,SAAS,CAAC,CAAA"}
