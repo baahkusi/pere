@@ -1,0 +1,435 @@
+type Market @entity {
+  id: Bytes! # Address
+  token: Bytes! # Collateral token address
+  oracle: Oracle! # Oracle address
+  payoff: Bytes # Payoff address
+  marketAccounts: [MarketAccount!]! @derivedFrom(field: "market") # Accounts that have positions in this market
+  marketOrders: [MarketOrder!]! @derivedFrom(field: "market") # Global orders for this market
+  #
+  maker: BigInt! # Global maker position
+  long: BigInt! # Global long position
+  short: BigInt! # Global short position
+  #
+  latestPrice: BigInt! # Latest price from oracle
+  latestVersion: BigInt! # Latest oracle timestamp
+  currentVersion: BigInt! # Current oracle timestamp
+  latestOrderId: BigInt! # Latest global order id
+  currentOrderId: BigInt! # Current global order id
+  #
+  accumulators: [MarketAccumulator!]! @derivedFrom(field: "market") # List of market accumulators for each oracle version
+  accumulations: [MarketAccumulation!]! @derivedFrom(field: "market") # List of bucketed market accumulations
+  #
+  currentSocializationPeriod: MarketSocializationPeriod # Current market socialization period
+  socializationPeriods: [MarketSocializationPeriod!]!
+    @derivedFrom(field: "market") # List of market socialization periods
+}
+
+type MarketOrder @entity {
+  id: Bytes! # marketAddress:orderId
+  market: Market! # Market address
+  orderId: BigInt! # Global order id
+  version: BigInt! # Oracle version timestamp
+  #
+  maker: BigInt! # Net maker position delta
+  long: BigInt! # Net long position delta
+  short: BigInt! # Net short position delta
+  #
+  newMaker: BigInt! # Global maker size after settlement. Optimistically updated on Fulfillment if requested
+  newLong: BigInt! # Global long size after settlement. Optimistically updated on Fulfillment if requested
+  newShort: BigInt! # Global short size after settlement. Optimistically updated on Fulfillment if requested
+  #
+  oracleVersion: OracleVersion! # Oracle version
+  accountOrders: [Order!]! @derivedFrom(field: "marketOrder") # Account orders for this market order
+  #
+  makerTotal: BigInt! # Total maker delta
+  longTotal: BigInt! # Total long delta
+  shortTotal: BigInt! # Total short delta
+}
+
+type Account @entity {
+  id: Bytes! # Address
+  marketAccounts: [MarketAccount!]! @derivedFrom(field: "account") # Markets that this account has positions in
+  accumulations: [AccountAccumulation!]! @derivedFrom(field: "account") # List of bucketed account accumulations
+  operators: [Bytes!]! # List of operators enabled via the MarketFactory
+  multiInvokerOperators: [Bytes!]! # List of operators enabled via the MultiInvoker
+}
+
+type MarketAccount @entity {
+  id: Bytes! # marketAddress:accountAddress
+  market: Market! # Parent Market
+  account: Account! # Parent Account
+  positions: [Position!]! @derivedFrom(field: "marketAccount") # Positions in this market account. A position is defined by going from zero to non-zero and back to zero.
+  maker: BigInt! # Account maker position
+  long: BigInt! # Account long position
+  short: BigInt! # Account short position
+  #
+  pendingMaker: BigInt! # v2.0.1 tracking only
+  pendingLong: BigInt! # v2.0.1 tracking only
+  pendingShort: BigInt! # v2.0.1 tracking only
+  makerInvalidation: BigInt! # v2.0.1 tracking only
+  longInvalidation: BigInt! # v2.0.1 tracking only
+  shortInvalidation: BigInt! # v2.0.1 tracking only
+  #
+  positionNonce: BigInt! # Unique ID for each position
+  latestVersion: BigInt! # Latest oracle version timestamp
+  currentVersion: BigInt! # Current oracle version timestamp
+  latestOrderId: BigInt! # Latest account order id
+  currentOrderId: BigInt! # Current account order id
+  collateral: BigInt! # Current account collateral
+  #
+  accumulations: [MarketAccountAccumulation!]!
+    @derivedFrom(field: "marketAccount") # List of bucketed market account accumulations
+  #
+  triggerOrders: [MultiInvokerTriggerOrder!]!
+    @derivedFrom(field: "marketAccount") # List of trigger orders for this marketAccount
+}
+
+type Position @entity {
+  id: Bytes! # marketAddress:accountAddress:positionNonce
+  marketAccount: MarketAccount! # Parent MarketAccount
+  orders: [Order!]! @derivedFrom(field: "position") # Orders for this position
+  nonce: BigInt! # Unique ID for this position
+  #
+  maker: BigInt! # Optimistically updated on Fulfillment
+  long: BigInt! # Optimistically updated on Fulfillment
+  short: BigInt! # Optimistically updated on Fulfillment
+  #
+  startVersion: BigInt! # Oracle version timestamp at the time of position opening
+  startCollateral: BigInt! # Collateral at the time of position opening
+  startMaker: BigInt! # Position maker at the time of position opening
+  startLong: BigInt! # Position long at the time of position opening
+  startShort: BigInt! # Position long at the time of position opening
+  #
+  openSize: BigInt! # Sum of all open orders
+  openNotional: BigInt! # Sum of all open notionals
+  openOffset: BigInt! # Sum of offsets for open orders
+  closeNotional: BigInt! # Sum of all close notionals
+  closeSize: BigInt! # Sum of all close orders
+  closeOffset: BigInt! # Sum of offsets for close orders
+  notional: BigInt! # Total notional volume for this position
+  netDeposits: BigInt! # Total deposits for this position
+  #
+  accumulation: OrderAccumulation! # Accumulation for this position
+  #
+  trades: BigInt! # Number of orders which changed this position
+}
+
+type Order @entity {
+  id: Bytes! # marketAddress:accountAddress:orderId
+  position: Position! # Parent Position
+  account: Account! # Account address (needed to query by account as position.marketAccount.account is not supported)
+  market: Market! # Market address (needed to query by market as position.marketAccount.account is not supported)
+  timestamp: BigInt! # Oracle version timestamp
+  orderId: BigInt! # Account order id
+  marketOrder: MarketOrder! # Parent MarketOrder
+  oracleVersion: OracleVersion! # Order oracle version
+  startCollateral: BigInt! # Collateral before transaction
+  endCollateral: BigInt! # Collateral after transaction
+  #
+  liquidation: Boolean! # If this order is a liquidation
+  referrer: Bytes! # Referrer account
+  liquidator: Bytes! # Liquidator account
+  guaranteeReferrer: Bytes! # Guarantee referrer account
+  #
+  maker: BigInt! # Maker position delta
+  long: BigInt! # Long position delta
+  short: BigInt! # Short position delta
+  collateral: BigInt! # Collateral delta
+  #
+  guaranteePrice: BigInt # Guarantee price for order
+  guaranteeSolve: Boolean! # Whether or not this order is the solver side of a guarantee
+  #
+  makerTotal: BigInt! # Total Maker position volume
+  longTotal: BigInt! # Total Long position volume
+  shortTotal: BigInt! # Total position volume
+  depositTotal: BigInt! # Total collateral deposit value
+  withdrawalTotal: BigInt! # Total collateral withdrawal value
+  #
+  executionPrice: BigInt! # Price for order fulfillment, or if non-requested or invalid, the oracle price at time of order creation
+  newMaker: BigInt! # Position maker size after settlement. Optimistically updated on Fulfillment if requested
+  newLong: BigInt! # Position long size after settlement. Optimistically updated on Fulfillment if requested
+  newShort: BigInt! # Position short size after settlement. Optimistically updated on Fulfillment if requested
+  #
+  accumulation: OrderAccumulation! # Accumulation for this order
+  #
+  transactionHashes: [Bytes!]! # Transaction hashes for this order's creation
+}
+
+type OracleVersion @entity {
+  id: Bytes! # oracleAddress:Version
+  subOracle: SubOracle! # Parent SubOracle which requsts and fulfills this version
+  marketOrders: [MarketOrder!]! @derivedFrom(field: "oracleVersion") # Market orders for this oracle version
+  orders: [Order!]! @derivedFrom(field: "oracleVersion") # Orders for this oracle version
+  #
+  requested: Boolean! # If this version was been requested (position changes request a new version)
+  timestamp: BigInt! # Timestamp of this version, reflects granularity of oracle
+  valid: Boolean! # If this version is valid
+  price: BigInt! # Price for this version
+  #
+  requestTimestamp: BigInt # Block timestamp of the request
+  requestTransactionHash: Bytes # Transaction hash that requested this version
+  fulfillTimestamp: BigInt # Block timestamp of the fulfillment
+  fulfillTransactionHash: Bytes # Transaction hash that fulfilled this version
+}
+
+type Oracle @entity {
+  id: Bytes! # Address
+  markets: [Market!]! @derivedFrom(field: "oracle") # Markets that use this oracle
+  subOracle: SubOracle! # SubOracle that requests and fulfills this oracle
+}
+
+type SubOracle @entity {
+  id: Bytes! # Address
+  oracle: Oracle! # Parent Oracle
+  versions: [OracleVersion!]! @derivedFrom(field: "subOracle") # Oracle versions for this sub oracle
+}
+
+# Tracking value to provide pnl breakdowns. This is a cumulative value that is updated on each oracle version. To find the pnl for a given time period, subtract the previous version's value from the current version's value and multiply by the position.
+type MarketAccumulator @entity {
+  id: Bytes! # market:version
+  market: Market! # Parent Market
+  fromVersion: BigInt! # Oracle version timestamp
+  toVersion: BigInt! # Oracle version timestamp
+  latestPrice: BigInt! # Latest market price at this accumulator
+  #
+  maker: BigInt! # Total maker position at this accumulator
+  long: BigInt! # Total long position at this accumulator
+  short: BigInt! # Total short position at this accumulator
+  pnlMaker: BigInt! # Per position maker pnl
+  pnlLong: BigInt! # Per position long pnl
+  pnlShort: BigInt! # Per position short pnl
+  fundingMaker: BigInt! # Per position maker funding
+  fundingLong: BigInt! # Per position long funding
+  fundingShort: BigInt! # Per position short funding
+  interestMaker: BigInt! # Per position maker interest
+  interestLong: BigInt! # Per position long interest
+  interestShort: BigInt! # Per position short interest
+  positionFeeMaker: BigInt! # Per position maker position fee
+  exposureMaker: BigInt! # Per position maker exposure
+  #
+  transactionHash: Bytes! # Transaction hash that created this accumulator
+}
+
+# Accumulation data for an account order or position.
+type OrderAccumulation @entity {
+  id: Bytes! # determined by creator
+  collateral_accumulation: BigInt! # Total collateral accumulated for the parent entity - summation of collateral_subAccumulation_*
+  fee_accumulation: BigInt! # Total fees accumulated for the parent entity - summation of fee_subAccumulation_*
+  #
+  collateral_subAccumulation_offset: BigInt! # Total Price offset for the parent entity
+  collateral_subAccumulation_pnl: BigInt! # Total price based PNL for the parent entity
+  collateral_subAccumulation_funding: BigInt! # Total funding accumulated for the parent entity
+  collateral_subAccumulation_interest: BigInt! # Total interest accumulated for the parent entity
+  collateral_subAccumulation_makerPositionFee: BigInt! # Total maker position fees accumulated for the parent entity (maker position only)
+  collateral_subAccumulation_makerExposure: BigInt! # Total maker exposure accumulated for the parent entity (maker position only)
+  collateral_subAccumulation_priceOverride: BigInt! # Total price override accumulated for the parent entity (intent orders only)
+  #
+  fee_subAccumulation_settlement: BigInt! # Settlement fee charged for the parent entity
+  fee_subAccumulation_trade: BigInt! # Trade fee charged for the parent entity
+  fee_subAccumulation_liquidation: BigInt! # Liquidation fee charged for the parent entity
+  fee_subAccumulation_additive: BigInt! # Additive (interface) fees for the parent entity
+  fee_subAccumulation_triggerOrder: BigInt! # Trigger order fees for the parent entity
+  #
+  metadata_subtractiveFee: BigInt! # Subtractive fee for the parent entity - included as part of the order's trade fee
+  metadata_solverFee: BigInt! # Solver fee for the parent entity - included as part of the order's subtractive fee (intent orders only)
+  metadata_net: BigInt! # collateral_accumulation minus fee_accumulation
+}
+
+enum Bucket {
+  hourly
+  daily
+  weekly
+  all
+}
+# Accumulation data for a market, bucketed by time
+type MarketAccumulation @entity {
+  id: Bytes! # market:version
+  market: Market! # Parent Market
+  bucket: Bucket! # Bucket for this accumulation
+  timestamp: BigInt! # Oracle version timestamp
+  maker: BigInt! # Total maker position change
+  long: BigInt! # Total long position change
+  short: BigInt! # Total short position change
+  taker: BigInt! # Total taker position change
+  solver: BigInt! # Total solver position change
+  makerNotional: BigInt! # Total maker notional
+  longNotional: BigInt! # Total long notional
+  shortNotional: BigInt! # Total short notional
+  takerNotional: BigInt! # Total taker notional
+  solverNotional: BigInt! # Total solver notional
+  pnlMaker: BigInt!
+  pnlLong: BigInt!
+  pnlShort: BigInt!
+  fundingMaker: BigInt!
+  fundingLong: BigInt!
+  fundingShort: BigInt!
+  interestMaker: BigInt!
+  interestLong: BigInt!
+  interestShort: BigInt!
+  positionFeeMaker: BigInt!
+  exposureMaker: BigInt!
+  #
+  positionFeeMarket: BigInt!
+  fundingMarket: BigInt!
+  interestMarket: BigInt!
+  exposureMarket: BigInt!
+  #
+  fundingRateMaker: BigInt!
+  fundingRateLong: BigInt!
+  fundingRateShort: BigInt!
+  interestRateMaker: BigInt!
+  interestRateLong: BigInt!
+  interestRateShort: BigInt!
+  #
+  trades: BigInt! # Number of orders which changed an account's position
+  traders: BigInt! # Number of accounts which changed their position
+}
+
+# Accumulation data for a MarketAccount, bucketed by time
+type MarketAccountAccumulation @entity {
+  id: Bytes! # market:version
+  market: Market! # Parent Market
+  account: Account! # Parent Account
+  marketAccount: MarketAccount! # Parent MarketAccount
+  bucket: Bucket! # Bucket for this accumulation
+  timestamp: BigInt! # Oracle version timestamp
+  accumulation: OrderAccumulation! # PNL and Fee Accumulation values for this marketAccount
+  takerAccumulation: OrderAccumulation! # PNL and Fee Accumulation values for taker (long and short) marketAccount
+  maker: BigInt! # Total maker volume in bucket (in market units)
+  long: BigInt! # Total long volume in bucket (in market units)
+  short: BigInt! # Total short volume in bucket (in market units)
+  taker: BigInt! # Total taker volume in bucket (in market units)
+  solver: BigInt! # Total solver volume in bucket (in market units)
+  makerNotional: BigInt! # Total maker notional volume in bucket (in USD)
+  longNotional: BigInt! # Total long notional volume in bucket (in USD)
+  shortNotional: BigInt! # Total short notional volume in bucket (in USD)
+  takerNotional: BigInt! # Total taker notional volume in bucket (in USD)
+  solverNotional: BigInt! # Total solver notional volume in bucket (in USD)
+  trades: BigInt! # Number of orders which modified the account's position
+  liquidations: BigInt! # Number of liquidations for this account
+  #
+  referredMakerNotional: BigInt! # Notional value of maker position for referred orders
+  referredLongNotional: BigInt! # Notional value of long position for referred orders
+  referredShortNotional: BigInt! # Notional value of short position for referred orders
+  referredTrades: BigInt! # Number of referred orders which modified the account's position
+  referredTraders: BigInt! # Number of referred accounts which modified their position
+  referredSubtractiveFees: BigInt! # Subtractive fees for accrued from referred orders
+  #
+  guaranteeReferredLongNotional: BigInt! # Notional value of long position for guaranteeReferred orders
+  guaranteeReferredShortNotional: BigInt! # Notional value of short position for guaranteeReferred orders
+  guaranteeReferredTrades: BigInt! # Number of guaranteeReferred orders which modified the account's position
+  guaranteeReferredTraders: BigInt! # Number of guaranteeReferred accounts which modified their position
+  guaranteeReferredSubtractiveFees: BigInt! # Solver fees for accrued from guaranteeReferred orders
+}
+
+# Accumulation data for an Account, bucketed by time
+type AccountAccumulation @entity {
+  id: Bytes! # market:version
+  account: Account! # Parent Account
+  bucket: Bucket! # Bucket for this accumulation
+  timestamp: BigInt! # Oracle version timestamp
+  accumulation: OrderAccumulation! # PNL and Fee Accumulation values for this account
+  takerAccumulation: OrderAccumulation! # PNL and Fee Accumulation values for taker (long and short) marketAccount
+  makerNotional: BigInt! # Notional value of maker position
+  longNotional: BigInt! # Notional value of long position
+  shortNotional: BigInt! # Notional value of short position
+  takerNotional: BigInt! # Notional value of taker (long and short) position
+  solverNotional: BigInt! # Notional value of solver (long and short) position
+  trades: BigInt! # Number of orders which modified the account's position
+  liquidations: BigInt! # Number of liquidations for this account
+}
+
+# Accumulation data for a protocol, bucketed by time
+type ProtocolAccumulation @entity {
+  id: Bytes! # market:version
+  bucket: Bucket! # Bucket for this accumulation
+  timestamp: BigInt! # Oracle version timestamp
+  makerNotional: BigInt! # Total maker notional
+  longNotional: BigInt! # Total long notional
+  shortNotional: BigInt! # Total short notional
+  takerNotional: BigInt! # Total taker notional
+  solverNotional: BigInt! # Total solver notional
+  pnlMaker: BigInt!
+  pnlLong: BigInt!
+  pnlShort: BigInt!
+  fundingMaker: BigInt!
+  fundingLong: BigInt!
+  fundingShort: BigInt!
+  interestMaker: BigInt!
+  interestLong: BigInt!
+  interestShort: BigInt!
+  positionFeeMaker: BigInt!
+  exposureMaker: BigInt!
+  #
+  positionFeeMarket: BigInt!
+  fundingMarket: BigInt!
+  interestMarket: BigInt!
+  exposureMarket: BigInt!
+  #
+  trades: BigInt! # Number of orders which changed an account's position
+  traders: BigInt! # Number of accounts which changed their position
+}
+
+# Market socialization period is a period when the market's major side is being socialized because the minor and maker
+# totals are less than the major side.
+type MarketSocializationPeriod @entity {
+  id: Bytes! # market:startVersion
+  market: Market! # Parent Market
+  startVersion: BigInt! # Oracle version timestamp
+  endVersion: BigInt # Oracle version timestamp
+  maker: BigInt! # Total maker position
+  long: BigInt! # Total long position
+  short: BigInt! # Total short position
+}
+
+# NOTE: This entity contains trigger orders from both MultiInvoker and Manager but the naming is kept to avoid breaking changes.
+# This entity's name will be changed to `TriggerOrder` in a future release.
+type MultiInvokerTriggerOrder @entity {
+  id: Bytes! # Trigger Order Source:Trigger Order nonce
+  source: Bytes! # Source of the trigger order (MultiInvoker or Manager)
+  account: Bytes! # Account address
+  market: Bytes! # Market address
+  marketAccount: MarketAccount! # MarketAccount entity
+  nonce: BigInt! # Trigger Order nonce or orderId
+  triggerOrderSide: Int!
+  triggerOrderComparison: Int!
+  triggerOrderFee: BigInt!
+  triggerOrderPrice: BigInt!
+  triggerOrderDelta: BigInt!
+  triggerOrderInterfaceFee_amount: BigInt!
+  triggerOrderInterfaceFee_receiver: Bytes!
+  triggerOrderInterfaceFee_unwrap: Boolean!
+  triggerOrderInterfaceFee_fixed: Boolean!
+  triggerOrderInterfaceFee2_amount: BigInt!
+  triggerOrderInterfaceFee2_receiver: Bytes!
+  triggerOrderInterfaceFee2_unwrap: Boolean!
+  triggerOrderInterfaceFee2_fixed: Boolean!
+  triggerOrderReferrer: Bytes!
+  executed: Boolean! # If the trigger order has been executed
+  cancelled: Boolean! # If the trigger order has been cancelled
+  associatedOrder: Order # Order that happened in the same transaction as order creation
+  transactionHash: Bytes! # Transaction hash that created this trigger order
+  blockTimestamp: BigInt! # Block timestamp of the transaction that created this trigger order
+  executionTransactionHash: Bytes # Transaction hash that executed this trigger order
+  cancellationTransactionHash: Bytes # Transaction hash that cancelled this trigger order
+}
+
+type Vault @entity {
+  id: Bytes! # address
+}
+
+# NOTE: Vault Updated raw event for tracking purposes. This entity is likely to be removed once
+# better vault position tracking is implemented.
+type VaultUpdated @entity(immutable: true) {
+  id: Bytes!
+  vault: Bytes! # address
+  sender: Bytes! # address
+  account: Bytes! # address
+  version: BigInt! # uint256
+  depositAssets: BigInt! # uint256
+  redeemShares: BigInt! # uint256
+  claimAssets: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

@@ -1,0 +1,38 @@
+{
+  "arbitrum-sepolia": {
+    "MarketFactory": {
+      "address": "0x3101E04d126bD380700029AD0B9ee806BDB03016",
+      "startBlock": 185927305
+    },
+    "MultiInvoker": {
+      "address": "0x825687Ab8fa78894e5951559EDB256c0A3F89DB9",
+      "startBlock": 185957627
+    },
+    "VaultFactory": {
+      "address": "0x877682C7a8840D59A63a6227ED2Aeb20C3ae7FeB",
+      "startBlock": 2252382
+    },
+    "Manager": {
+      "address": "0x6233068ae0C123d85d5d9D0402a88E0b6161bC49",
+      "startBlock": 185957761
+    }
+  },
+  "arbitrum-one": {
+    "MarketFactory": {
+      "address": "0xDaD8A103473dfd47F90168A0E46766ed48e26EC7",
+      "startBlock": 135921706
+    },
+    "MultiInvoker": {
+      "address": "0x431603567EcBb4aa1Ce5a4fdBe5554cAEa658832",
+      "startBlock": 135921999
+    },
+    "VaultFactory": {
+      "address": "0xad3565680aEcEe27A39249D8c2D55dAc79BE5Ad0",
+      "startBlock": 135921947
+    },
+    "Manager": {
+      "address": "0xbbF8A9D4961496FFE3F9c35F76106ec697Af2261",
+      "startBlock": 266574117
+    }
+  }
+}

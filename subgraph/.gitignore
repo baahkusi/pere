@@ -1,0 +1,16 @@
+**/generated
+**/build
+**/node_modules/
+.vscode
+*/.*token
+.DS_Store
+
+.env
+
+subgraph.yaml
+docker-compose.yml
+data/
+test/data/*.json
+abis/combined/*.json
+
+TODO.txt
